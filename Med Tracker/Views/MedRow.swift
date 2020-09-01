@@ -13,6 +13,10 @@ struct MedRow: View {
     
     var body: some View {
         HStack {
+            Image("\(medication.image)")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(medication.name)
                     .font(.headline)
