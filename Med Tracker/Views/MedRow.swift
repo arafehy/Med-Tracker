@@ -13,18 +13,22 @@ struct MedRow: View {
     
     var body: some View {
         HStack {
-            Image("\(medication.image)")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+            thumbnail
             VStack(alignment: .leading) {
                 Text(medication.name)
                     .font(.headline)
                 Text("Remaining: \(medication.count)")
             }
         }
+    }
+    
+    var thumbnail: some View {
+        Image("\(medication.image)")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 50, height: 50)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color.gray, lineWidth: 2))
     }
 }
 
