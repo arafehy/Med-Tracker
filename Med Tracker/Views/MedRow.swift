@@ -11,7 +11,7 @@ import SwiftUI
 struct MedRow: View {
     var medication: MedicationItem
     
-    var showImage: Bool {
+    var showThumbnail: Bool {
         guard let _ = UIImage(named: "\(medication.image)") else {
             return false
         }
@@ -20,7 +20,7 @@ struct MedRow: View {
     
     var body: some View {
         HStack {
-            if showImage {
+            if showThumbnail {
                 thumbnail
             }
             VStack(alignment: .leading) {
