@@ -17,6 +17,8 @@ struct MedRow: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
             VStack(alignment: .leading) {
                 Text(medication.name)
                     .font(.headline)
