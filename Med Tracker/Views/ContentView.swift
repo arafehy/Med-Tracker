@@ -22,7 +22,9 @@ struct ContentView: View {
                     }
                 }
             }
-        }.listStyle(GroupedListStyle())
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("Medications")
+        }
     }
 }
 
