@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    var medications = Bundle.main.decode([MedsByTimeOfDay].self, from: "medications.json")
+    @State var displayAddModal = false
+    
+    let medications = Bundle.main.decode([MedsByTimeOfDay].self, from: "medications.json")
     
     var body: some View {
         NavigationView {
@@ -26,11 +28,14 @@ struct ContentView: View {
             .navigationBarTitle("Medications")
             .navigationBarItems(trailing: addButton)
         }
+        .sheet(isPresented: $displayAddModal) {
+            AddMed()
+        }
     }
     
     var addButton: some View {
         Button(action: {
-            print("Add tapped")
+            self.displayAddModal.toggle()
         }){
             Image(systemName: "plus.circle.fill")
                 .font(.title)

@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct AddMed: View {
+    @Environment(\.presentationMode) var presentation
+    
     @State private var name: String = ""
     @State private var count: String = ""
     @State private var instructions: String = ""
@@ -40,7 +42,7 @@ struct AddMed: View {
     
     var addMedicationButton: some View {
         Button("Add Medication") {
-            print("Adding medication...")
+            self.presentation.wrappedValue.dismiss()
         }
     }
     
