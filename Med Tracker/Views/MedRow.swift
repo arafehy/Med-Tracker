@@ -11,9 +11,18 @@ import SwiftUI
 struct MedRow: View {
     var medication: MedicationItem
     
+    var showImage: Bool {
+        guard let _ = UIImage(named: "\(medication.image)") else {
+            return false
+        }
+        return true
+    }
+    
     var body: some View {
         HStack {
-            thumbnail
+            if showImage {
+                thumbnail
+            }
             VStack(alignment: .leading) {
                 Text(medication.name)
                     .font(.headline)
