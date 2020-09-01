@@ -17,7 +17,7 @@ struct ContentView: View {
                 ForEach(medications) { timeOfDay in
                     Section(header: Text(timeOfDay.name)) {
                         ForEach(timeOfDay.medications) { medication in
-                            Text(medication.name)
+                            MedRow(medication: medication)
                         }
                     }
                 }
