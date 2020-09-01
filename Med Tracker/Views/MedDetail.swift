@@ -18,6 +18,7 @@ struct MedDetail: View {
             medInstructions
             Spacer()
         }
+        .navigationBarTitle(Text(medication.name))
     }
     
     var medImage: some View {
@@ -44,6 +45,8 @@ struct MedDetail: View {
 
 struct MedDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MedDetail(medication: MedicationItem.example)
+        NavigationView {
+            MedDetail(medication: MedicationItem.example)
+        }
     }
 }
