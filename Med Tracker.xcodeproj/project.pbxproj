@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E037E94D24FEE27A00EF21FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E94C24FEE27A00EF21FD /* AppDelegate.swift */; };
+		E037E94F24FEE27A00EF21FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E94E24FEE27A00EF21FD /* SceneDelegate.swift */; };
+		E037E95124FEE27A00EF21FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E95024FEE27A00EF21FD /* ContentView.swift */; };
+		E037E95324FEE28200EF21FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E037E95224FEE28200EF21FD /* Assets.xcassets */; };
+		E037E95624FEE28200EF21FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E037E95524FEE28200EF21FD /* Preview Assets.xcassets */; };
+		E037E95924FEE28200EF21FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E037E95724FEE28200EF21FD /* LaunchScreen.storyboard */; };
+		E037E96424FEE28300EF21FD /* Med_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E96324FEE28300EF21FD /* Med_TrackerTests.swift */; };
+		E037E96F24FEE28300EF21FD /* Med_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E96E24FEE28300EF21FD /* Med_TrackerUITests.swift */; };
+		E070308C24FEE51D00870096 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E070308B24FEE51D00870096 /* .gitignore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E037E96024FEE28300EF21FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E037E94124FEE27A00EF21FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E037E94824FEE27A00EF21FD;
+			remoteInfo = "Med Tracker";
+		};
+		E037E96B24FEE28300EF21FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E037E94124FEE27A00EF21FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E037E94824FEE27A00EF21FD;
+			remoteInfo = "Med Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E037E94924FEE27A00EF21FD /* Med Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E037E94C24FEE27A00EF21FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E037E94E24FEE27A00EF21FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E037E95024FEE27A00EF21FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E037E95224FEE28200EF21FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E037E95524FEE28200EF21FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E037E95824FEE28200EF21FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E037E95A24FEE28200EF21FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E037E95F24FEE28300EF21FD /* Med TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E037E96324FEE28300EF21FD /* Med_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_TrackerTests.swift; sourceTree = "<group>"; };
+		E037E96524FEE28300EF21FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E037E96A24FEE28300EF21FD /* Med TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E037E96E24FEE28300EF21FD /* Med_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_TrackerUITests.swift; sourceTree = "<group>"; };
+		E037E97024FEE28300EF21FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E070308B24FEE51D00870096 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E037E94624FEE27A00EF21FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E95C24FEE28300EF21FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E96724FEE28300EF21FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E037E94024FEE27A00EF21FD = {
+			isa = PBXGroup;
+			children = (
+				E070308B24FEE51D00870096 /* .gitignore */,
+				E037E94B24FEE27A00EF21FD /* Med Tracker */,
+				E037E96224FEE28300EF21FD /* Med TrackerTests */,
+				E037E96D24FEE28300EF21FD /* Med TrackerUITests */,
+				E037E94A24FEE27A00EF21FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E037E94A24FEE27A00EF21FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E037E94924FEE27A00EF21FD /* Med Tracker.app */,
+				E037E95F24FEE28300EF21FD /* Med TrackerTests.xctest */,
+				E037E96A24FEE28300EF21FD /* Med TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E037E94B24FEE27A00EF21FD /* Med Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				E037E97D24FEE2C600EF21FD /* Delegates */,
+				E037E97C24FEE2BD00EF21FD /* Views */,
+				E037E97E24FEE2DA00EF21FD /* Resources */,
+				E037E97F24FEE2F300EF21FD /* Supporting Files */,
+				E037E95424FEE28200EF21FD /* Preview Content */,
+			);
+			path = "Med Tracker";
+			sourceTree = "<group>";
+		};
+		E037E95424FEE28200EF21FD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E037E95524FEE28200EF21FD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E037E96224FEE28300EF21FD /* Med TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E037E96324FEE28300EF21FD /* Med_TrackerTests.swift */,
+				E037E96524FEE28300EF21FD /* Info.plist */,
+			);
+			path = "Med TrackerTests";
+			sourceTree = "<group>";
+		};
+		E037E96D24FEE28300EF21FD /* Med TrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E037E96E24FEE28300EF21FD /* Med_TrackerUITests.swift */,
+				E037E97024FEE28300EF21FD /* Info.plist */,
+			);
+			path = "Med TrackerUITests";
+			sourceTree = "<group>";
+		};
+		E037E97C24FEE2BD00EF21FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E037E95024FEE27A00EF21FD /* ContentView.swift */,
+				E037E95724FEE28200EF21FD /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E037E97D24FEE2C600EF21FD /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E037E94C24FEE27A00EF21FD /* AppDelegate.swift */,
+				E037E94E24FEE27A00EF21FD /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E037E97E24FEE2DA00EF21FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E037E95224FEE28200EF21FD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E037E97F24FEE2F300EF21FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E037E95A24FEE28200EF21FD /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E037E94824FEE27A00EF21FD /* Med Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E037E97324FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med Tracker" */;
+			buildPhases = (
+				E037E94524FEE27A00EF21FD /* Sources */,
+				E037E94624FEE27A00EF21FD /* Frameworks */,
+				E037E94724FEE27A00EF21FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Med Tracker";
+			productName = "Med Tracker";
+			productReference = E037E94924FEE27A00EF21FD /* Med Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E037E95E24FEE28300EF21FD /* Med TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E037E97624FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med TrackerTests" */;
+			buildPhases = (
+				E037E95B24FEE28300EF21FD /* Sources */,
+				E037E95C24FEE28300EF21FD /* Frameworks */,
+				E037E95D24FEE28300EF21FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E037E96124FEE28300EF21FD /* PBXTargetDependency */,
+			);
+			name = "Med TrackerTests";
+			productName = "Med TrackerTests";
+			productReference = E037E95F24FEE28300EF21FD /* Med TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E037E96924FEE28300EF21FD /* Med TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E037E97924FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med TrackerUITests" */;
+			buildPhases = (
+				E037E96624FEE28300EF21FD /* Sources */,
+				E037E96724FEE28300EF21FD /* Frameworks */,
+				E037E96824FEE28300EF21FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E037E96C24FEE28300EF21FD /* PBXTargetDependency */,
+			);
+			name = "Med TrackerUITests";
+			productName = "Med TrackerUITests";
+			productReference = E037E96A24FEE28300EF21FD /* Med TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E037E94124FEE27A00EF21FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Yazan Arafeh";
+				TargetAttributes = {
+					E037E94824FEE27A00EF21FD = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					E037E95E24FEE28300EF21FD = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = E037E94824FEE27A00EF21FD;
+					};
+					E037E96924FEE28300EF21FD = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = E037E94824FEE27A00EF21FD;
+					};
+				};
+			};
+			buildConfigurationList = E037E94424FEE27A00EF21FD /* Build configuration list for PBXProject "Med Tracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E037E94024FEE27A00EF21FD;
+			productRefGroup = E037E94A24FEE27A00EF21FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E037E94824FEE27A00EF21FD /* Med Tracker */,
+				E037E95E24FEE28300EF21FD /* Med TrackerTests */,
+				E037E96924FEE28300EF21FD /* Med TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E037E94724FEE27A00EF21FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E070308C24FEE51D00870096 /* .gitignore in Resources */,
+				E037E95924FEE28200EF21FD /* LaunchScreen.storyboard in Resources */,
+				E037E95624FEE28200EF21FD /* Preview Assets.xcassets in Resources */,
+				E037E95324FEE28200EF21FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E95D24FEE28300EF21FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E96824FEE28300EF21FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E037E94524FEE27A00EF21FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E037E94D24FEE27A00EF21FD /* AppDelegate.swift in Sources */,
+				E037E94F24FEE27A00EF21FD /* SceneDelegate.swift in Sources */,
+				E037E95124FEE27A00EF21FD /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E95B24FEE28300EF21FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E037E96424FEE28300EF21FD /* Med_TrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E037E96624FEE28300EF21FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E037E96F24FEE28300EF21FD /* Med_TrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E037E96124FEE28300EF21FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E037E94824FEE27A00EF21FD /* Med Tracker */;
+			targetProxy = E037E96024FEE28300EF21FD /* PBXContainerItemProxy */;
+		};
+		E037E96C24FEE28300EF21FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E037E94824FEE27A00EF21FD /* Med Tracker */;
+			targetProxy = E037E96B24FEE28300EF21FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E037E95724FEE28200EF21FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E037E95824FEE28200EF21FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E037E97124FEE28300EF21FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E037E97224FEE28300EF21FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E037E97424FEE28300EF21FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Med Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Med Tracker/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E037E97524FEE28300EF21FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Med Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Med Tracker/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E037E97724FEE28300EF21FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				INFOPLIST_FILE = "Med TrackerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Med Tracker.app/Med Tracker";
+			};
+			name = Debug;
+		};
+		E037E97824FEE28300EF21FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				INFOPLIST_FILE = "Med TrackerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Med Tracker.app/Med Tracker";
+			};
+			name = Release;
+		};
+		E037E97A24FEE28300EF21FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				INFOPLIST_FILE = "Med TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Med Tracker";
+			};
+			name = Debug;
+		};
+		E037E97B24FEE28300EF21FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BZSTQ3T72Y;
+				INFOPLIST_FILE = "Med TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafeh.Med-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Med Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E037E94424FEE27A00EF21FD /* Build configuration list for PBXProject "Med Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E037E97124FEE28300EF21FD /* Debug */,
+				E037E97224FEE28300EF21FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E037E97324FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E037E97424FEE28300EF21FD /* Debug */,
+				E037E97524FEE28300EF21FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E037E97624FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E037E97724FEE28300EF21FD /* Debug */,
+				E037E97824FEE28300EF21FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E037E97924FEE28300EF21FD /* Build configuration list for PBXNativeTarget "Med TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E037E97A24FEE28300EF21FD /* Debug */,
+				E037E97B24FEE28300EF21FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E037E94124FEE27A00EF21FD /* Project object */;
+}
