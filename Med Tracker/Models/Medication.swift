@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MedicationTimeOfDay: Codable, Identifiable {
+struct MedsByTimeOfDay: Codable, Identifiable {
     var id: UUID
     var name: String
     var medications: [MedicationItem]

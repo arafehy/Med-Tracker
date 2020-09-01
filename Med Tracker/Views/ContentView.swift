@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    var medications = Bundle.main.decode([MedsByTimeOfDay].self, from: "medications.json")
+    
     var body: some View {
-        Text("Hello, World!")
+        List {
+            ForEach(medications) { timeOfDay in
+                Section(header: Text(timeOfDay.name)) {
+                    ForEach(timeOfDay.medications) { medication in
+                        Text(medication.name)
+                    }
+                }
+            }
+        }.listStyle(GroupedListStyle())
     }
 }
 
