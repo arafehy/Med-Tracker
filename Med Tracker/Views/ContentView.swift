@@ -24,12 +24,16 @@ struct ContentView: View {
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Medications")
-            .navigationBarItems(trailing: Button(action: {
-                print("Add tapped")
-            }){
-                Image(systemName: "plus.circle.fill")
-                    .font(.title)
-            })
+            .navigationBarItems(trailing: addButton)
+        }
+    }
+    
+    var addButton: some View {
+        Button(action: {
+            print("Add tapped")
+        }){
+            Image(systemName: "plus.circle.fill")
+                .font(.title)
         }
     }
 }
