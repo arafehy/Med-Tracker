@@ -19,14 +19,16 @@ struct MedRow: View {
     }
     
     var body: some View {
-        HStack {
-            if showThumbnail {
-                thumbnail
-            }
-            VStack(alignment: .leading) {
-                Text(medication.name)
-                    .font(.headline)
-                Text("Remaining: \(medication.count)")
+        NavigationLink(destination: MedDetail(medication: medication)) {
+            HStack {
+                if showThumbnail {
+                    thumbnail
+                }
+                VStack(alignment: .leading) {
+                    Text(medication.name)
+                        .font(.headline)
+                    Text("Remaining: \(medication.count)")
+                }
             }
         }
     }
