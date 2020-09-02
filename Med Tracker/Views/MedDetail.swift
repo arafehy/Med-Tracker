@@ -34,12 +34,16 @@ struct MedDetail: View {
     }
     
     var medInstructions: some View {
-        VStack(alignment: .leading) {
+        VStack {
             Text("Instructions")
                 .font(.title)
-            Text(medication.instructions)
+                .padding(.top)
+            HStack {
+                Text(medication.instructions)
+                    .padding(.horizontal)
+                Spacer()
+            }
         }
-        .padding()
     }
 }
 
