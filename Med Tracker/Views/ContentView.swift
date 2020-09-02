@@ -15,22 +15,26 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(medications) { timeOfDay in
-                    Section(header: Text(timeOfDay.name)) {
-                        ForEach(timeOfDay.medications) { medication in
-                            MedRow(medication: medication)
-                        }
-                    }
-                }
-            }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Medications")
-            .navigationBarItems(trailing: addButton)
+            medList
+                .navigationBarTitle("Medications")
+                .navigationBarItems(trailing: addButton)
         }
         .sheet(isPresented: $displayAddModal) {
             AddMed()
         }
+    }
+    
+    var medList: some View {
+        List {
+            ForEach(medications) { timeOfDay in
+                Section(header: Text(timeOfDay.name)) {
+                    ForEach(timeOfDay.medications) { medication in
+                        MedRow(medication: medication)
+                    }
+                }
+            }
+        }
+        .listStyle(GroupedListStyle())
     }
     
     var addButton: some View {
