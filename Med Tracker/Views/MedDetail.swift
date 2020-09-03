@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MedDetail: View {
-    var medication: MedicationItem
+    @State var medication: MedicationItem
     
     var body: some View {
         VStack {
@@ -28,9 +28,13 @@ struct MedDetail: View {
     }
     
     var medCount: some View {
-        Text("Remaining: \(medication.count)")
-            .font(.largeTitle)
-            .bold()
+        HStack {
+            subtractButton
+            Text("Remaining: \(medication.count)")
+                .font(.largeTitle)
+                .bold()
+            addButton
+        }
     }
     
     var medInstructions: some View {
@@ -45,6 +49,29 @@ struct MedDetail: View {
             }
         }
     }
+    
+//    MARK: - Buttons
+    
+    var addButton: some View {
+        Button(action: {
+            self.medication.count += 1
+        }){
+            Image(systemName: "plus.square")
+                .font(.title)
+                .accentColor(.green)
+        }
+    }
+    
+    var subtractButton: some View {
+        Button(action: {
+            self.medication.count -= 1
+        }){
+            Image(systemName: "minus.square")
+                .font(.title)
+                .accentColor(.red)
+        }
+    }
+    
 }
 
 struct MedDetail_Previews: PreviewProvider {
