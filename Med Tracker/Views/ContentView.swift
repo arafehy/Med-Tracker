@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var displayAddModal = false
+    @ObservedObject var dataManager: DataManager = DataManager()
+    var medications: [MedicationGroup] {
+        dataManager.medications
+    }
     
-    let medications = Bundle.main.decode([MedsByTimeOfDay].self, from: "medications.json")
+    @State var displayAddModal = false
     
     var body: some View {
         NavigationView {
