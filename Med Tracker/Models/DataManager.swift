@@ -30,7 +30,7 @@ class DataManager: ObservableObject {
             try medsJSON.write(to: self.medFilePath)
             print("Successful save")
         } catch {
-            print("Save Failed")
+            print("Save Failed: ", error.localizedDescription)
         }
     }
     
@@ -41,7 +41,7 @@ class DataManager: ObservableObject {
             self.medications = try JSONDecoder().decode([MedicationGroup].self, from: unarchivedData)
         }
         catch {
-            print(error.localizedDescription)
+            print("Couldn't retrieve medications: ", error.localizedDescription)
             resetMedFile()
         }
     }
@@ -62,7 +62,7 @@ class DataManager: ObservableObject {
             self.medications = try JSONDecoder().decode([MedicationGroup].self, from: readData)
         }
         catch {
-            print(error)
+            print("Failed to store sample file: ", error.localizedDescription)
         }
         
         self.storeMedications(medicationData: medications)
