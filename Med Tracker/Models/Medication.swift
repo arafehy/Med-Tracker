@@ -8,13 +8,47 @@
 
 import Foundation
 
-struct MedsByTimeOfDay: Codable, Identifiable {
+class MedicationGroup: Codable, Identifiable {
     var id: UUID
-    var name: String
+    var name: String = ""
     var medications: [MedicationItem]
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case medications
+    }
+    
+    init(id: UUID, name: String, medications: [MedicationItem]) {
+        self.id = id
+        self.name = name
+        self.medications = medications
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        medications = try container.decode(Array<MedicationItem>.self, forKey: .medications)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(medications, forKey: .medications)
+    }
+    
+    func addMedication(newMed: MedicationItem) {
+        medications.append(newMed)
+    }
 }
 
-struct MedicationItem: Codable, Equatable, Identifiable {
+class MedicationItem: Codable, Equatable, Identifiable {
+    static func == (lhs: MedicationItem, rhs: MedicationItem) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: UUID
     var name: String
     var count: Int
@@ -22,6 +56,13 @@ struct MedicationItem: Codable, Equatable, Identifiable {
     
     var image: String {
         name
+    }
+    
+    init(id: UUID, name: String, count: Int, instructions: String) {
+        self.id = id
+        self.name = name
+        self.count = count
+        self.instructions = instructions
     }
     
     #if DEBUG
