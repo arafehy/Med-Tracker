@@ -15,6 +15,7 @@
 		E037E95924FEE28200EF21FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E037E95724FEE28200EF21FD /* LaunchScreen.storyboard */; };
 		E037E96424FEE28300EF21FD /* Med_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E96324FEE28300EF21FD /* Med_TrackerTests.swift */; };
 		E037E96F24FEE28300EF21FD /* Med_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037E96E24FEE28300EF21FD /* Med_TrackerUITests.swift */; };
+		E04AED3E2502057800993F7F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04AED3D2502057800993F7F /* DataManager.swift */; };
 		E070308C24FEE51D00870096 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E070308B24FEE51D00870096 /* .gitignore */; };
 		E070309124FEE8D400870096 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070308F24FEE8D300870096 /* Medication.swift */; };
 		E070309224FEE8D400870096 /* medications.json in Resources */ = {isa = PBXBuildFile; fileRef = E070309024FEE8D400870096 /* medications.json */; };
@@ -56,6 +57,7 @@
 		E037E96A24FEE28300EF21FD /* Med TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E037E96E24FEE28300EF21FD /* Med_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_TrackerUITests.swift; sourceTree = "<group>"; };
 		E037E97024FEE28300EF21FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E04AED3D2502057800993F7F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = "Med Tracker/Models/DataManager.swift"; sourceTree = SOURCE_ROOT; };
 		E070308B24FEE51D00870096 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E070308D24FEE77B00870096 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E070308F24FEE8D300870096 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		E070308E24FEE8B500870096 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E04AED3D2502057800993F7F /* DataManager.swift */,
 				E070308F24FEE8D300870096 /* Medication.swift */,
 				E070309024FEE8D400870096 /* medications.json */,
 			);
@@ -347,6 +350,7 @@
 				E070309524FEEB4500870096 /* Helper.swift in Sources */,
 				E037E94F24FEE27A00EF21FD /* SceneDelegate.swift in Sources */,
 				E0B9C03F24FF100E007703EA /* AddMed.swift in Sources */,
+				E04AED3E2502057800993F7F /* DataManager.swift in Sources */,
 				E037E95124FEE27A00EF21FD /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
