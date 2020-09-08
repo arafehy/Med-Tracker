@@ -65,6 +65,6 @@ struct AddMed: View {
 
 struct AddMed_Previews: PreviewProvider {
     static var previews: some View {
-        AddMed()
+        AddMed(medications: Medications())
     }
 }
