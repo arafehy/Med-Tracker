@@ -41,7 +41,7 @@ struct AddMed: View {
             TextField("Medication Name", text: $name)
             TextField("Medication Count", text: $count)
                 .keyboardType(.numberPad)
-            TextField("Instructions", text: $instructions)
+            TextField("Medication Instructions", text: $instructions)
             Picker("Taken:", selection: $medGroup) {
                 Text(MedicationGroup.TimeOfDay.beforeBreakfast.rawValue).tag(MedicationGroup.TimeOfDay.beforeBreakfast)
                 Text(MedicationGroup.TimeOfDay.withBreakfast.rawValue).tag(MedicationGroup.TimeOfDay.withBreakfast)
