@@ -20,10 +20,7 @@ struct AddMed: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                cameraButton
-                Spacer()
+            Form {
                 medicationInfo
                 addMedicationButton
                 Spacer()
