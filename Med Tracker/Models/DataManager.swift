@@ -8,9 +8,7 @@
 
 import Foundation
 
-class DataManager: ObservableObject {
-    
-    @Published var medications = [MedicationGroup]()
+class DataManager {
     
     var medFilePath: URL {
         getDocumentsDirectory().appendingPathComponent(Keys.dataFile.rawValue)
@@ -19,11 +17,7 @@ class DataManager: ObservableObject {
         case dataFile = "MedData.plist"
     }
     
-    init() {
-        retrieveMedications()
-    }
-    
-    func storeMedications(medicationData: [MedicationGroup]) {
+    func storeMedications(medicationData: Medications) {
         do {
             let data = try JSONEncoder().encode(medicationData)
             let medsJSON = try NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: true)
@@ -34,38 +28,39 @@ class DataManager: ObservableObject {
         }
     }
     
-    func retrieveMedications() {
+    func retrieveMedications() -> Medications? {
         do {
+            print("Retrieving")
             let data = try Data(contentsOf: self.medFilePath)
-            guard let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data else { return }
-            self.medications = try JSONDecoder().decode([MedicationGroup].self, from: unarchivedData)
+            guard let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data else { return nil }
+            return try JSONDecoder().decode(Medications.self, from: unarchivedData)
         }
         catch {
             print("Couldn't retrieve medications: ", error.localizedDescription)
-            resetMedFile()
+            return resetMedFile()
         }
     }
     
-    func resetMedFile() {
+    func resetMedFile() -> Medications? {
         guard let fileURL = Bundle.main.url(forResource: "medications", withExtension: "json") else {
-            return
+            return nil
         }
         
         do {
+            print("Resetting")
             let medsJSON = try Data(contentsOf: fileURL)
             let data = try NSKeyedArchiver.archivedData(withRootObject: medsJSON, requiringSecureCoding: true)
             try data.write(to: self.medFilePath)
             guard let readData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data else {
                 print("Could not read data")
-                return
+                return nil
             }
-            self.medications = try JSONDecoder().decode([MedicationGroup].self, from: readData)
+            return try JSONDecoder().decode(Medications.self, from: readData)
         }
         catch {
             print("Failed to store sample file: ", error.localizedDescription)
+            return nil
         }
-        
-        self.storeMedications(medicationData: medications)
     }
     
     func getDocumentsDirectory() -> URL {
