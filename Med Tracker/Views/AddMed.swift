@@ -39,7 +39,7 @@ struct AddMed: View {
     var medicationInfo: some View {
         Section(header: Text("Medication Information")) {
             TextField("Medication Name", text: $name)
-            TextField("Count", text: $count)
+            TextField("Medication Count", text: $count)
                 .keyboardType(.numberPad)
             TextField("Instructions", text: $instructions)
         }
