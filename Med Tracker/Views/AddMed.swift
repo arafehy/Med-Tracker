@@ -22,6 +22,13 @@ struct AddMed: View {
         NavigationView {
             Form {
                 medicationInfo
+                Section(header: Text("Add an image")) {
+                    HStack {
+                        Spacer()
+                        cameraButton
+                        Spacer()
+                    }
+                }
                 addMedicationButton
                 Spacer()
             }.padding()
