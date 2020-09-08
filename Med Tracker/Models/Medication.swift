@@ -54,6 +54,7 @@ class Medications: Codable, ObservableObject {
 class MedicationGroup: Codable, Identifiable {
     var id: UUID
     var name: String = ""
+    var timeOfDay: String = ""
     var medications: [MedicationItem]
     
     enum CodingKeys: CodingKey {
@@ -62,9 +63,18 @@ class MedicationGroup: Codable, Identifiable {
         case medications
     }
     
-    init(id: UUID, name: String, medications: [MedicationItem]) {
+    enum TimeOfDay: String {
+        case beforeBreakfast = "Before Breakfast"
+        case withBreakfast = "With Breakfast"
+        case afterBreakfast = "After Breakfast"
+        case beforeSleep = "Before Sleep"
+        case other = "Other"
+    }
+    
+    init(id: UUID, name: String, timeOfDay: String, medications: [MedicationItem]) {
         self.id = id
         self.name = name
+        self.timeOfDay = timeOfDay
         self.medications = medications
     }
     
