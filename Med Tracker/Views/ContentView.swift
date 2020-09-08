@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var dataManager: DataManager = DataManager()
-    var medications: [MedicationGroup] {
-        dataManager.medications
-    }
+    @ObservedObject var medications: Medications
     
     @State var displayAddModal = false
     
@@ -29,7 +26,7 @@ struct ContentView: View {
     
     var medList: some View {
         List {
-            ForEach(medications) { timeOfDay in
+            ForEach(medications.medicationGroups) { timeOfDay in
                 Section(header: Text(timeOfDay.name)) {
                     ForEach(timeOfDay.medications) { medication in
                         MedRow(medication: medication)
@@ -52,6 +49,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(medications: Medications())
     }
 }
