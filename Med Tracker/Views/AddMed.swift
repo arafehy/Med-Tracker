@@ -34,6 +34,7 @@ struct AddMed: View {
                 }
                 addMedicationButton
             }
+            .navigationBarItems(leading: cancelButton)
             .navigationBarTitle("Add New Medication")
         }.alert(isPresented: $showAlert) { () -> Alert in
             Alert(title: Text("Count must be a whole number."))
@@ -77,6 +78,15 @@ struct AddMed: View {
             Image(systemName: "camera")
                 .font(.largeTitle)
         }.padding()
+    }
+    
+    var cancelButton: some View {
+        Button(action: {
+            // TODO: Check if any fields have been entered
+            self.presentation.wrappedValue.dismiss()
+        }) {
+            Text("Cancel")
+        }
     }
     
     func addMedicationToGroup(newMed: MedicationItem) {
