@@ -20,7 +20,7 @@ struct ContentView: View {
                 .navigationBarItems(trailing: addButton)
         }
         .sheet(isPresented: $displayAddModal) {
-            AddMed()
+            AddMed(medications: self.medications)
         }
     }
     

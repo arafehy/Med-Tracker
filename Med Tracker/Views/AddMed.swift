@@ -14,6 +14,9 @@ struct AddMed: View {
     @State private var name: String = ""
     @State private var count: String = ""
     @State private var instructions: String = ""
+    @State private var medGroup = MedicationGroup.TimeOfDay.beforeBreakfast
+    
+    @ObservedObject var medications: Medications
     
     var body: some View {
         NavigationView {
