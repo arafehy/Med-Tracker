@@ -63,12 +63,14 @@ class MedicationGroup: Codable, Identifiable {
         case medications
     }
     
-    enum TimeOfDay: String {
+    enum TimeOfDay: String, CaseIterable, Identifiable {
         case beforeBreakfast = "Before Breakfast"
         case withBreakfast = "With Breakfast"
         case afterBreakfast = "After Breakfast"
         case beforeSleep = "Before Sleep"
         case other = "Other"
+        
+        var id: String { self.rawValue }
     }
     
     init(id: UUID, name: String, timeOfDay: String, medications: [MedicationItem]) {
