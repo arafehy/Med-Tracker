@@ -8,6 +8,49 @@
 
 import Foundation
 
+class Medications: Codable, ObservableObject {
+    @Published var medicationGroups: [MedicationGroup]
+    
+    init() {
+        let dataManager = DataManager()
+        guard let medications = dataManager.retrieveMedications() else {
+            self.medicationGroups = []
+            return
+        }
+        self.medicationGroups = medications.medicationGroups
+    }
+    
+    init(medicationGroups: [MedicationGroup]) {
+        self.medicationGroups = medicationGroups
+    }
+    
+    required init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        var elements: [MedicationGroup] = []
+        while !container.isAtEnd {
+            do {
+                let value = try container.decode(MedicationGroup.self)
+                elements.append(value)
+            } catch {
+                print("Could not decode: ", error)
+            }
+        }
+        self.medicationGroups = elements
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        for medGroup in medicationGroups {
+            do {
+                try container.encode(medGroup)
+            }
+            catch {
+                print("Could not encode: ", error)
+            }
+        }
+    }
+}
+
 class MedicationGroup: Codable, Identifiable {
     var id: UUID
     var name: String = ""
