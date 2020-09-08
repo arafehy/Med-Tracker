@@ -14,7 +14,7 @@ struct AddMed: View {
     @State private var name: String = ""
     @State private var count: String = ""
     @State private var instructions: String = ""
-    @State private var medGroup = MedicationGroup.TimeOfDay.beforeBreakfast
+    @State private var medGroup: MedicationGroup.TimeOfDay = .beforeBreakfast
     
     @ObservedObject var medications: Medications
     
@@ -57,11 +57,9 @@ struct AddMed: View {
                 .keyboardType(.numberPad)
             TextField("Medication Instructions", text: $instructions)
             Picker("Taken:", selection: $medGroup) {
-                Text(MedicationGroup.TimeOfDay.beforeBreakfast.rawValue).tag(MedicationGroup.TimeOfDay.beforeBreakfast)
-                Text(MedicationGroup.TimeOfDay.withBreakfast.rawValue).tag(MedicationGroup.TimeOfDay.withBreakfast)
-                Text(MedicationGroup.TimeOfDay.afterBreakfast.rawValue).tag(MedicationGroup.TimeOfDay.afterBreakfast)
-                Text(MedicationGroup.TimeOfDay.beforeSleep.rawValue).tag(MedicationGroup.TimeOfDay.beforeSleep)
-                Text(MedicationGroup.TimeOfDay.other.rawValue).tag(MedicationGroup.TimeOfDay.other)
+                ForEach(MedicationGroup.TimeOfDay.allCases) { group in
+                    Text(group.rawValue).tag(group)
+                }
             }
         }
     }
