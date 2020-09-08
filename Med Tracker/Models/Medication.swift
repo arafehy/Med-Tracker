@@ -99,15 +99,15 @@ class MedicationGroup: Codable, Identifiable {
     }
 }
 
-class MedicationItem: Codable, Equatable, Identifiable {
+class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
     static func == (lhs: MedicationItem, rhs: MedicationItem) -> Bool {
         lhs.id == rhs.id
     }
     
-    var id: UUID
-    var name: String
-    var count: Int
-    var instructions: String
+    @Published var id: UUID
+    @Published var name: String
+    @Published var count: Int
+    @Published var instructions: String
     
     var image: String {
         name
