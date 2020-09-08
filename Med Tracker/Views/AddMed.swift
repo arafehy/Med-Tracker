@@ -18,8 +18,19 @@ struct AddMed: View {
     
     @ObservedObject var medications: Medications
     
-    @State private var showAlert: Bool = false
-    @State private var disableButton: Bool = true
+//    MARK: - Form Validation
+    
+    private var allFieldsFilled: Bool {
+        !name.isEmpty && !instructions.isEmpty && !count.isEmpty
+    }
+    private var someFieldsFilled: Bool {
+        !name.isEmpty || !instructions.isEmpty || !count.isEmpty
+    }
+    
+    @State private var showAddAlert: Bool = false
+    @State private var showCancelAlert: Bool = false
+    
+    // MARK: - Views
     
     var body: some View {
         NavigationView {
@@ -36,8 +47,6 @@ struct AddMed: View {
             }
             .navigationBarItems(leading: cancelButton)
             .navigationBarTitle("Add New Medication")
-        }.alert(isPresented: $showAlert) { () -> Alert in
-            Alert(title: Text("Count must be a whole number."))
         }
     }
     
@@ -61,13 +70,20 @@ struct AddMed: View {
     
     var addMedicationButton: some View {
         Button("Add Medication") {
+            guard self.allFieldsFilled else {
+                self.showAddAlert.toggle()
+                return
+            }
             guard let count = Int(self.count) else {
-                self.showAlert.toggle()
+                self.showAddAlert.toggle()
                 return
             }
             let newMed = MedicationItem(id: UUID(), name: self.name, count: count, instructions: self.instructions)
             self.addMedicationToGroup(newMed: newMed)
             self.presentation.wrappedValue.dismiss()
+        }
+        .alert(isPresented: $showAddAlert) { () -> Alert in
+            Alert(title: Text("All fields except the image must be filled. Count must be a whole number."))
         }
     }
     
