@@ -18,6 +18,9 @@ struct AddMed: View {
     
     @ObservedObject var medications: Medications
     
+    @State private var showAlert: Bool = false
+    @State private var disableButton: Bool = true
+    
     var body: some View {
         NavigationView {
             Form {
@@ -30,9 +33,10 @@ struct AddMed: View {
                     }
                 }
                 addMedicationButton
-                Spacer()
-            }.padding()
-                .navigationBarTitle("Add New Medication")
+            }
+            .navigationBarTitle("Add New Medication")
+        }.alert(isPresented: $showAlert) { () -> Alert in
+            Alert(title: Text("Count must be a whole number."))
         }
     }
     
@@ -56,6 +60,12 @@ struct AddMed: View {
     
     var addMedicationButton: some View {
         Button("Add Medication") {
+            guard let count = Int(self.count) else {
+                self.showAlert.toggle()
+                return
+            }
+            let newMed = MedicationItem(id: UUID(), name: self.name, count: count, instructions: self.instructions)
+            self.addMedicationToGroup(newMed: newMed)
             self.presentation.wrappedValue.dismiss()
         }
     }
@@ -65,8 +75,15 @@ struct AddMed: View {
             print("Camera tapped")
         }) {
             Image(systemName: "camera")
-                .font(.system(size: 100))
+                .font(.largeTitle)
+        }.padding()
+    }
+    
+    func addMedicationToGroup(newMed: MedicationItem) {
+        let desiredMedGroup = medications.medicationGroups.filter { (group) -> Bool in
+            group.name == self.medGroup.rawValue
         }
+        desiredMedGroup[0].addMedication(newMed: newMed)
     }
 }
 
