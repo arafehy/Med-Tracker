@@ -113,11 +113,34 @@ class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
         name
     }
     
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case count
+        case instructions
+    }
+    
     init(id: UUID, name: String, count: Int, instructions: String) {
         self.id = id
         self.name = name
         self.count = count
         self.instructions = instructions
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: CodingKeys.id)
+        name = try container.decode(String.self, forKey: CodingKeys.name)
+        count = try container.decode(Int.self, forKey: CodingKeys.count)
+        instructions = try container.decode(String.self, forKey: CodingKeys.instructions)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: CodingKeys.id)
+        try container.encode(name, forKey: CodingKeys.name)
+        try container.encode(count, forKey: CodingKeys.count)
+        try container.encode(instructions, forKey: CodingKeys.instructions)
     }
     
     #if DEBUG
