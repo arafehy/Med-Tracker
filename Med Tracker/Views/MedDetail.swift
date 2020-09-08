@@ -11,9 +11,18 @@ import SwiftUI
 struct MedDetail: View {
     @State var medication: MedicationItem
     
+    var showImage: Bool {
+        guard let _ = UIImage(named: "\(medication.image)") else {
+            return false
+        }
+        return true
+    }
+    
     var body: some View {
         VStack {
-            medImage
+            if showImage {
+                medImage
+            }
             medCount
             medInstructions
             Spacer()
