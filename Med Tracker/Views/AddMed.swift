@@ -37,7 +37,7 @@ struct AddMed: View {
     }
     
     var medicationInfo: some View {
-        VStack {
+        Section(header: Text("Medication Information")) {
             TextField("Medication Name", text: $name)
             TextField("Count", text: $count)
                 .keyboardType(.numberPad)
