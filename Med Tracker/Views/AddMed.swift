@@ -113,13 +113,6 @@ struct AddMed: View {
                   }))
         }
     }
-    
-    func addMedicationToGroup(newMed: MedicationItem) {
-        let desiredMedGroup = medications.medicationGroups.filter { (group) -> Bool in
-            group.name == self.medGroup.rawValue
-        }
-        desiredMedGroup[0].addMedication(newMed: newMed)
-    }
 }
 
 struct AddMed_Previews: PreviewProvider {
