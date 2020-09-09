@@ -16,7 +16,7 @@ struct AddMed: View {
     @State private var instructions: String = ""
     @State private var medGroup: MedicationGroup.TimeOfDay = .beforeBreakfast
     
-    @ObservedObject var medications: Medications
+    @EnvironmentObject var medications: MedState
     
     // MARK: - Form Validation
     
@@ -77,7 +77,7 @@ struct AddMed: View {
                 return
             }
             let newMed = MedicationItem(id: UUID(), name: self.name, count: count, instructions: self.instructions)
-            self.addMedicationToGroup(newMed: newMed)
+            self.medications.addMedicationToGroup(newMed: newMed, desiredGroup: self.medGroup)
             self.presentation.wrappedValue.dismiss()
         }
         .alert(isPresented: $showAddAlert) { () -> Alert in
@@ -117,6 +117,6 @@ struct AddMed: View {
 
 struct AddMed_Previews: PreviewProvider {
     static var previews: some View {
-        AddMed(medications: Medications())
+        AddMed().environmentObject(MedState())
     }
 }
