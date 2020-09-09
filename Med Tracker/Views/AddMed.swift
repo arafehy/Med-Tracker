@@ -105,9 +105,7 @@ struct AddMed: View {
         .alert(isPresented: $showCancelAlert) { () -> Alert in
             Alert(title: Text("Are you sure you want to cancel?"),
                   message: Text("Any information entered will be lost."),
-                  primaryButton: .default(Text("Continue Editing"), action: {
-                    print(self.showCancelAlert)
-                  }),
+                  primaryButton: .default(Text("Continue Editing")),
                   secondaryButton: .cancel(Text("Discard Changes"), action: {
                     self.presentation.wrappedValue.dismiss()
                   }))
