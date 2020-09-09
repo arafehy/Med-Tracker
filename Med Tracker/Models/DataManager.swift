@@ -17,7 +17,7 @@ class DataManager {
         case dataFile = "MedData.plist"
     }
     
-    func storeMedications(medicationData: Medications) {
+    func storeMedications(medicationData: [MedicationGroup]) {
         do {
             let data = try JSONEncoder().encode(medicationData)
             let medsJSON = try NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: true)
@@ -28,12 +28,12 @@ class DataManager {
         }
     }
     
-    func retrieveMedications() -> Medications? {
+    func retrieveMedications() -> [MedicationGroup]? {
         do {
             print("Retrieving")
             let data = try Data(contentsOf: self.medFilePath)
             guard let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data else { return nil }
-            return try JSONDecoder().decode(Medications.self, from: unarchivedData)
+            return try JSONDecoder().decode([MedicationGroup].self, from: unarchivedData)
         }
         catch {
             print("Couldn't retrieve medications: ", error.localizedDescription)
@@ -41,7 +41,7 @@ class DataManager {
         }
     }
     
-    func resetMedFile() -> Medications? {
+    func resetMedFile() -> [MedicationGroup]? {
         guard let fileURL = Bundle.main.url(forResource: "medications", withExtension: "json") else {
             return nil
         }
@@ -55,7 +55,7 @@ class DataManager {
                 print("Could not read data")
                 return nil
             }
-            return try JSONDecoder().decode(Medications.self, from: readData)
+            return try JSONDecoder().decode([MedicationGroup].self, from: readData)
         }
         catch {
             print("Failed to store sample file: ", error.localizedDescription)
