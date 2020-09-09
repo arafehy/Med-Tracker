@@ -22,7 +22,7 @@ class DataManager {
             let data = try JSONEncoder().encode(medicationData)
             let medsJSON = try NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: true)
             try medsJSON.write(to: self.medFilePath)
-            print("Successful save")
+            print("Saved successfully")
         } catch {
             print("Save Failed: ", error.localizedDescription)
         }
@@ -30,7 +30,6 @@ class DataManager {
     
     func retrieveMedications() -> [MedicationGroup]? {
         do {
-            print("Retrieving")
             let data = try Data(contentsOf: self.medFilePath)
             guard let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data else { return nil }
             return try JSONDecoder().decode([MedicationGroup].self, from: unarchivedData)
@@ -47,7 +46,6 @@ class DataManager {
         }
         
         do {
-            print("Resetting")
             let medsJSON = try Data(contentsOf: fileURL)
             let data = try NSKeyedArchiver.archivedData(withRootObject: medsJSON, requiringSecureCoding: true)
             try data.write(to: self.medFilePath)
