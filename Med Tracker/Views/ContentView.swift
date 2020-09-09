@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var medications: Medications
+    @EnvironmentObject var medications: MedState
     
     @State var displayAddModal = false
     
@@ -20,15 +20,15 @@ struct ContentView: View {
                 .navigationBarItems(trailing: addButton)
         }
         .sheet(isPresented: $displayAddModal) {
-            AddMed(medications: self.medications)
+            AddMed().environmentObject(self.medications)
         }
     }
     
     var medList: some View {
         List {
-            ForEach(medications.medicationGroups) { timeOfDay in
-                Section(header: Text(timeOfDay.name)) {
-                    ForEach(timeOfDay.medications) { medication in
+            ForEach(medications.medicationGroups) { group in
+                Section(header: Text(group.timeOfDay)) {
+                    ForEach(group.medications) { medication in
                         MedRow(medication: medication)
                     }
                 }
@@ -49,6 +49,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(medications: Medications())
+        ContentView().environmentObject(MedState())
     }
 }

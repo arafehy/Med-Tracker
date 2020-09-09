@@ -16,7 +16,7 @@ struct AddMed: View {
     @State private var instructions: String = ""
     @State private var medGroup: MedicationGroup.TimeOfDay = .beforeBreakfast
     
-    @ObservedObject var medications: Medications
+    @EnvironmentObject var medications: MedState
     
     // MARK: - Form Validation
     
@@ -77,7 +77,7 @@ struct AddMed: View {
                 return
             }
             let newMed = MedicationItem(id: UUID(), name: self.name, count: count, instructions: self.instructions)
-            self.addMedicationToGroup(newMed: newMed)
+            self.medications.addMedicationToGroup(newMed: newMed, desiredGroup: self.medGroup)
             self.presentation.wrappedValue.dismiss()
         }
         .alert(isPresented: $showAddAlert) { () -> Alert in
@@ -87,7 +87,7 @@ struct AddMed: View {
     
     var cameraButton: some View {
         Button(action: {
-            print("Camera tapped")
+            // TODO: Show camera or photo picker view
         }) {
             Image(systemName: "camera")
                 .font(.largeTitle)
@@ -105,25 +105,16 @@ struct AddMed: View {
         .alert(isPresented: $showCancelAlert) { () -> Alert in
             Alert(title: Text("Are you sure you want to cancel?"),
                   message: Text("Any information entered will be lost."),
-                  primaryButton: .default(Text("Continue Editing"), action: {
-                    print(self.showCancelAlert)
-                  }),
+                  primaryButton: .default(Text("Continue Editing")),
                   secondaryButton: .cancel(Text("Discard Changes"), action: {
                     self.presentation.wrappedValue.dismiss()
                   }))
         }
     }
-    
-    func addMedicationToGroup(newMed: MedicationItem) {
-        let desiredMedGroup = medications.medicationGroups.filter { (group) -> Bool in
-            group.name == self.medGroup.rawValue
-        }
-        desiredMedGroup[0].addMedication(newMed: newMed)
-    }
 }
 
 struct AddMed_Previews: PreviewProvider {
     static var previews: some View {
-        AddMed(medications: Medications())
+        AddMed().environmentObject(MedState())
     }
 }

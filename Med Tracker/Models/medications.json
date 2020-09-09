@@ -1,7 +1,7 @@
 [
     {
         "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
-        "name": "Before Breakfast",
+        "timeOfDay": "Before Breakfast",
         "medications": [
             {
                 "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
@@ -24,8 +24,8 @@
         ]
     },
     {
-        "name": "With Breakfast",
         "id": "3D97FAB4-50AC-40FC-9BF0-3F46BB6A92F5",
+        "timeOfDay": "With Breakfast",
         "medications": [
             {
                 "id": "D44AAEBC-BF4F-42CD-8C37-0FEF772A5B69",
@@ -42,8 +42,8 @@
         ]
     },
     {
-        "name": "After Breakfast",
         "id": "1C89DAFD-7653-4EF2-BF20-C51A159BAC43",
+        "timeOfDay": "After Breakfast",
         "medications": [
             {
                 "id": "AB7E38EA-05A7-426A-AFF3-B3A32B3E86BF",
@@ -54,8 +54,8 @@
         ]
     },
     {
-        "name": "Before Sleep",
         "id": "CE3C67F9-79E3-46E3-B134-362A52ABFE3C",
+        "timeOfDay": "Before Sleep",
         "medications": [
             {
                 "id": "A4D89AF9-190E-4409-B924-AABD13DBB6A4",

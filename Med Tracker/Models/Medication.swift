@@ -8,58 +8,14 @@
 
 import Foundation
 
-class Medications: Codable, ObservableObject {
-    @Published var medicationGroups: [MedicationGroup]
-    
-    init() {
-        let dataManager = DataManager()
-        guard let medications = dataManager.retrieveMedications() else {
-            self.medicationGroups = []
-            return
-        }
-        self.medicationGroups = medications.medicationGroups
-    }
-    
-    init(medicationGroups: [MedicationGroup]) {
-        self.medicationGroups = medicationGroups
-    }
-    
-    required init(from decoder: Decoder) throws {
-        var container = try decoder.unkeyedContainer()
-        var elements: [MedicationGroup] = []
-        while !container.isAtEnd {
-            do {
-                let value = try container.decode(MedicationGroup.self)
-                elements.append(value)
-            } catch {
-                print("Could not decode: ", error)
-            }
-        }
-        self.medicationGroups = elements
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.unkeyedContainer()
-        for medGroup in medicationGroups {
-            do {
-                try container.encode(medGroup)
-            }
-            catch {
-                print("Could not encode: ", error)
-            }
-        }
-    }
-}
-
 class MedicationGroup: Codable, Identifiable {
     var id: UUID
-    var name: String = ""
     var timeOfDay: String = ""
     var medications: [MedicationItem]
     
     enum CodingKeys: CodingKey {
         case id
-        case name
+        case timeOfDay
         case medications
     }
     
@@ -73,9 +29,8 @@ class MedicationGroup: Codable, Identifiable {
         var id: String { self.rawValue }
     }
     
-    init(id: UUID, name: String, timeOfDay: String, medications: [MedicationItem]) {
+    init(id: UUID, timeOfDay: String, medications: [MedicationItem]) {
         self.id = id
-        self.name = name
         self.timeOfDay = timeOfDay
         self.medications = medications
     }
@@ -83,19 +38,15 @@ class MedicationGroup: Codable, Identifiable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
+        timeOfDay = try container.decode(String.self, forKey: .timeOfDay)
         medications = try container.decode(Array<MedicationItem>.self, forKey: .medications)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(name, forKey: .name)
+        try container.encode(timeOfDay, forKey: .timeOfDay)
         try container.encode(medications, forKey: .medications)
-    }
-    
-    func addMedication(newMed: MedicationItem) {
-        medications.append(newMed)
     }
 }
 
