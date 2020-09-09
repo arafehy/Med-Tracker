@@ -20,6 +20,7 @@
 		E070309124FEE8D400870096 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070308F24FEE8D300870096 /* Medication.swift */; };
 		E070309224FEE8D400870096 /* medications.json in Resources */ = {isa = PBXBuildFile; fileRef = E070309024FEE8D400870096 /* medications.json */; };
 		E070309524FEEB4500870096 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070309424FEEB4500870096 /* Helper.swift */; };
+		E083C9CF25085A4200778753 /* MedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E083C9CE25085A4200778753 /* MedState.swift */; };
 		E0B9C03B24FEF6C0007703EA /* MedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9C03A24FEF6C0007703EA /* MedRow.swift */; };
 		E0B9C03D24FF0A80007703EA /* MedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9C03C24FF0A80007703EA /* MedDetail.swift */; };
 		E0B9C03F24FF100E007703EA /* AddMed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9C03E24FF100E007703EA /* AddMed.swift */; };
@@ -63,6 +64,7 @@
 		E070308F24FEE8D300870096 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		E070309024FEE8D400870096 /* medications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = medications.json; sourceTree = "<group>"; };
 		E070309424FEEB4500870096 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E083C9CE25085A4200778753 /* MedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedState.swift; sourceTree = "<group>"; };
 		E0B9C03A24FEF6C0007703EA /* MedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedRow.swift; sourceTree = "<group>"; };
 		E0B9C03C24FF0A80007703EA /* MedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedDetail.swift; sourceTree = "<group>"; };
 		E0B9C03E24FF100E007703EA /* AddMed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMed.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				E04AED3D2502057800993F7F /* DataManager.swift */,
+				E083C9CE25085A4200778753 /* MedState.swift */,
 				E070308F24FEE8D300870096 /* Medication.swift */,
 				E070309024FEE8D400870096 /* medications.json */,
 			);
@@ -347,6 +350,7 @@
 				E0B9C03B24FEF6C0007703EA /* MedRow.swift in Sources */,
 				E037E94D24FEE27A00EF21FD /* AppDelegate.swift in Sources */,
 				E0B9C03D24FF0A80007703EA /* MedDetail.swift in Sources */,
+				E083C9CF25085A4200778753 /* MedState.swift in Sources */,
 				E070309524FEEB4500870096 /* Helper.swift in Sources */,
 				E037E94F24FEE27A00EF21FD /* SceneDelegate.swift in Sources */,
 				E0B9C03F24FF100E007703EA /* AddMed.swift in Sources */,
