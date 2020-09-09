@@ -1,80 +1,80 @@
 [
-	{
+    {
         "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
-		"name": "Before Breakfast",
-		"medications": [
-			{
+        "name": "Before Breakfast",
+        "medications": [
+            {
                 "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
-				"name": "Sinemet",
-				"count": 332,
-				"instructions": "• Take 4 times a day\n• Starting at 8 AM, then once every 4 hours"
-			},
-			{
+                "name": "Sinemet",
+                "count": 332,
+                "instructions": "• Take 4 times a day\n• Starting at 8 AM, then once every 4 hours"
+            },
+            {
                 "id": "36A7CC40-18C1-48E5-BCD8-3B42D43BEAEE",
-				"name": "Ritalin",
-				"count": 130,
-				"instructions": "• Take 2 times a day\n• Starting at 8 AM, then at 1:30 PM\n• 2nd pill must be taken by 2 PM\n• 1/2 hour before meal"
-			},
-			{
+                "name": "Ritalin",
+                "count": 130,
+                "instructions": "• Take 2 times a day\n• Starting at 8 AM, then at 1:30 PM\n• 2nd pill must be taken by 2 PM\n• 1/2 hour before meal"
+            },
+            {
                 "id": "CFB8C2DB-3478-4A10-92FA-3D2A2D5324FB",
-				"name": "Cozaar",
-				"count": 2,
-				"instructions": "• Take 1 after measuring blood pressure and before breakfast"
-			}
-		]
-	},
-	{
-		"name": "With Breakfast",
+                "name": "Cozaar",
+                "count": 2,
+                "instructions": "• Take 1 after measuring blood pressure and before breakfast"
+            }
+        ]
+    },
+    {
+        "name": "With Breakfast",
         "id": "3D97FAB4-50AC-40FC-9BF0-3F46BB6A92F5",
-		"medications": [
-			{
+        "medications": [
+            {
                 "id": "D44AAEBC-BF4F-42CD-8C37-0FEF772A5B69",
-				"name": "Glucophage",
-				"count": 15,
+                "name": "Glucophage",
+                "count": 15,
                 "instructions": "• Take 1 with breakfast"
-			},
-			{
+            },
+            {
                 "id": "2BAD20C5-D007-4BBE-B074-8CF0F256A42F",
-				"name": "Plavix",
-				"count": 13,
-				"instructions": "• Take 1 with breakfast"
-			}
-		]
-	},
-	{
-		"name": "After Breakfast",
+                "name": "Plavix",
+                "count": 13,
+                "instructions": "• Take 1 with breakfast"
+            }
+        ]
+    },
+    {
+        "name": "After Breakfast",
         "id": "1C89DAFD-7653-4EF2-BF20-C51A159BAC43",
-		"medications": [
-			{
+        "medications": [
+            {
                 "id": "AB7E38EA-05A7-426A-AFF3-B3A32B3E86BF",
-				"name": "Zoloft",
-				"count": 6,
+                "name": "Zoloft",
+                "count": 6,
                 "instructions": "• Take 1 after breakfast"
-			}
-		]
-	},
-	{
-		"name": "Before Sleep",
+            }
+        ]
+    },
+    {
+        "name": "Before Sleep",
         "id": "CE3C67F9-79E3-46E3-B134-362A52ABFE3C",
-		"medications": [
-			{
+        "medications": [
+            {
                 "id": "A4D89AF9-190E-4409-B924-AABD13DBB6A4",
-				"name": "Crestor",
-				"count": 5,
-				"instructions": "• Take 1 in the evening"
-			},
-			{
-                "id": "FC201614-1418-4152-9469-087B27485D13",
-				"name": "Osteo VSC",
-				"count": 90,
+                "name": "Crestor",
+                "count": 5,
                 "instructions": "• Take 1 in the evening"
-			},
-			{
+            },
+            {
+                "id": "FC201614-1418-4152-9469-087B27485D13",
+                "name": "Osteo VSC",
+                "count": 90,
+                "instructions": "• Take 1 in the evening"
+            },
+            {
                 "id": "58CE3F3E-74E1-4C5F-A630-986B187788B5",
-				"name": "Osteo Vegan",
-				"count": 180,
-				"instructions": "• Take 2 in the evening"
-			}
-		]
-	}
+                "name": "Osteo Vegan",
+                "count": 180,
+                "instructions": "• Take 2 in the evening"
+            }
+        ]
+    }
 ]

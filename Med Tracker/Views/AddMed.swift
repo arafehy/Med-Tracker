@@ -18,7 +18,7 @@ struct AddMed: View {
     
     @ObservedObject var medications: Medications
     
-//    MARK: - Form Validation
+    // MARK: - Form Validation
     
     private var allFieldsFilled: Bool {
         !name.isEmpty && !instructions.isEmpty && !count.isEmpty
@@ -64,7 +64,7 @@ struct AddMed: View {
         }
     }
     
-    //    MARK: - Buttons
+    // MARK: - Buttons
     
     var addMedicationButton: some View {
         Button("Add Medication") {

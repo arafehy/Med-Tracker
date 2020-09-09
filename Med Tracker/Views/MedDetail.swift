@@ -59,7 +59,7 @@ struct MedDetail: View {
         }
     }
     
-//    MARK: - Buttons
+    // MARK: - Buttons
     
     var addButton: some View {
         Button(action: {
