@@ -87,7 +87,7 @@ struct AddMed: View {
     
     var cameraButton: some View {
         Button(action: {
-            print("Camera tapped")
+            // TODO: Show camera or photo picker view
         }) {
             Image(systemName: "camera")
                 .font(.largeTitle)
