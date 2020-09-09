@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MedDetail: View {
-    @State var medication: MedicationItem
+    @ObservedObject var medication: MedicationItem
     
     var showImage: Bool {
         guard let _ = UIImage(named: "\(medication.image)") else {
