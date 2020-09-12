@@ -10,7 +10,7 @@ import Foundation
 
 class MedicationGroup: Codable, Identifiable {
     var id: UUID
-    var timeOfDay: String = ""
+    var timeOfDay: TimeOfDay
     var medications: [MedicationItem]
     
     enum CodingKeys: CodingKey {
@@ -19,7 +19,7 @@ class MedicationGroup: Codable, Identifiable {
         case medications
     }
     
-    enum TimeOfDay: String, CaseIterable, Identifiable {
+    enum TimeOfDay: String, CaseIterable, Identifiable, Codable {
         case beforeBreakfast = "Before Breakfast"
         case withBreakfast = "With Breakfast"
         case afterBreakfast = "After Breakfast"
@@ -29,7 +29,7 @@ class MedicationGroup: Codable, Identifiable {
         var id: String { self.rawValue }
     }
     
-    init(id: UUID, timeOfDay: String, medications: [MedicationItem]) {
+    init(id: UUID, timeOfDay: TimeOfDay, medications: [MedicationItem]) {
         self.id = id
         self.timeOfDay = timeOfDay
         self.medications = medications
@@ -38,7 +38,7 @@ class MedicationGroup: Codable, Identifiable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
-        timeOfDay = try container.decode(String.self, forKey: .timeOfDay)
+        timeOfDay = try container.decode(TimeOfDay.self, forKey: .timeOfDay)
         medications = try container.decode(Array<MedicationItem>.self, forKey: .medications)
     }
     

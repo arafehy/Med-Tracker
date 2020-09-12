@@ -19,7 +19,7 @@ class MedState: ObservableObject {
     
     func addMedicationToGroup(newMed: MedicationItem, desiredGroup: MedicationGroup.TimeOfDay) {
         let desiredMedGroup = medicationGroups.filter { (group) -> Bool in
-            group.timeOfDay == desiredGroup.rawValue
+            group.timeOfDay == desiredGroup
         }
         desiredMedGroup[0].medications.append(newMed)
         dataManager.storeMedications(medicationData: medicationGroups)
@@ -27,7 +27,7 @@ class MedState: ObservableObject {
     
     func deleteMedication(medToDelete: MedicationItem, locatedIn: MedicationGroup.TimeOfDay) {
         let medGroup = medicationGroups.filter { (group) -> Bool in
-            group.timeOfDay == locatedIn.rawValue
+            group.timeOfDay == locatedIn
         }
         guard let removeIndex = medGroup[0].medications.firstIndex(of: medToDelete) else {
             return
