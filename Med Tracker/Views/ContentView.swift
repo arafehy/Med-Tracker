@@ -26,9 +26,9 @@ struct ContentView: View {
     
     var medList: some View {
         List {
-            ForEach(medications.medicationGroups) { group in
+            ForEach(medications.medicationGroups) { (group: MedicationGroup) in
                 Section(header: Text(group.timeOfDay.rawValue)) {
-                    ForEach(group.medications) { medication in
+                    ForEach(group.medications) { (medication: MedicationItem) in
                         MedRow(medication: medication)
                     }
                 }
