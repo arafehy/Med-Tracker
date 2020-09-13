@@ -17,7 +17,7 @@ struct ContentView: View {
         NavigationView {
             medList
                 .navigationBarTitle("Medications")
-                .navigationBarItems(trailing: addButton)
+                .navigationBarItems(leading: EditButton(), trailing: addButton)
         }
         .sheet(isPresented: $displayAddModal) {
             AddMed().environmentObject(self.medications)
