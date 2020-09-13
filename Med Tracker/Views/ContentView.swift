@@ -31,6 +31,9 @@ struct ContentView: View {
                     ForEach(group.medications) { (medication: MedicationItem) in
                         MedRow(medication: medication)
                     }
+                    .onDelete {
+                        self.medications.deleteMedications(at: $0, in: group)
+                    }
                 }
             }
         }

@@ -23,13 +23,9 @@ class MedState: ObservableObject {
         dataManager.storeMedications(medicationData: medicationGroups)
     }
     
-    func deleteMedication(medToDelete: MedicationItem, locatedIn: MedicationGroup.TimeOfDay) {
-        let medGroup = medicationGroups.filter { (group) -> Bool in
-            group.timeOfDay == locatedIn
-        }
-        guard let removeIndex = medGroup[0].medications.firstIndex(of: medToDelete) else {
-            return
-        }
-        medGroup[0].medications.remove(at: removeIndex)
+    func deleteMedications(at offsets: IndexSet, in group: MedicationGroup) {
+        guard let desiredMedGroupIndex = medicationGroups.firstIndex(where: { $0.timeOfDay == group.timeOfDay }) else { return }
+        medicationGroups[desiredMedGroupIndex].medications.remove(atOffsets: offsets)
+        dataManager.storeMedications(medicationData: medicationGroups)
     }
 }
