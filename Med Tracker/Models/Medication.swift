@@ -59,6 +59,7 @@ class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
     @Published var name: String
     @Published var count: Int
     @Published var instructions: String
+    @Published var lastTaken: Date
     
     var image: String {
         name
@@ -69,13 +70,15 @@ class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
         case name
         case count
         case instructions
+        case lastTaken
     }
     
-    init(id: UUID, name: String, count: Int, instructions: String) {
+    init(id: UUID, name: String, count: Int, instructions: String, lastTaken: Date) {
         self.id = id
         self.name = name
         self.count = count
         self.instructions = instructions
+        self.lastTaken = lastTaken
     }
     
     required init(from decoder: Decoder) throws {
@@ -84,6 +87,7 @@ class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
         name = try container.decode(String.self, forKey: CodingKeys.name)
         count = try container.decode(Int.self, forKey: CodingKeys.count)
         instructions = try container.decode(String.self, forKey: CodingKeys.instructions)
+        lastTaken = try container.decode(Date.self, forKey: CodingKeys.lastTaken)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -98,6 +102,6 @@ class MedicationItem: Codable, Equatable, Identifiable, ObservableObject {
     static let example = MedicationItem(id: UUID(), name: "Sinemet", count: 333, instructions: """
     • Take 4 times a day
     • Starting at 8 AM, then once every 4 hours
-    """)
+    """, lastTaken: Date())
     #endif
 }
