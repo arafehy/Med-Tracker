@@ -17,7 +17,7 @@ struct ContentView: View {
         NavigationView {
             medList
                 .navigationBarTitle("Medications")
-                .navigationBarItems(trailing: addButton)
+                .navigationBarItems(leading: EditButton(), trailing: addButton)
         }
         .sheet(isPresented: $displayAddModal) {
             AddMed().environmentObject(self.medications)
@@ -26,10 +26,13 @@ struct ContentView: View {
     
     var medList: some View {
         List {
-            ForEach(medications.medicationGroups) { group in
-                Section(header: Text(group.timeOfDay)) {
-                    ForEach(group.medications) { medication in
+            ForEach(medications.medicationGroups) { (group: MedicationGroup) in
+                Section(header: Text(group.timeOfDay.rawValue)) {
+                    ForEach(group.medications) { (medication: MedicationItem) in
                         MedRow(medication: medication)
+                    }
+                    .onDelete {
+                        self.medications.deleteMedications(at: $0, in: group)
                     }
                 }
             }
