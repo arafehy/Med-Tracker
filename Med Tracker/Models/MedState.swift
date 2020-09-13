@@ -18,10 +18,8 @@ class MedState: ObservableObject {
     }
     
     func addMedicationToGroup(newMed: MedicationItem, desiredGroup: MedicationGroup.TimeOfDay) {
-        let desiredMedGroup = medicationGroups.filter { (group) -> Bool in
-            group.timeOfDay == desiredGroup
-        }
-        desiredMedGroup[0].medications.append(newMed)
+        guard let desiredMedGroupIndex = medicationGroups.firstIndex(where: { $0.timeOfDay == desiredGroup }) else { return }
+        medicationGroups[desiredMedGroupIndex].medications.append(newMed)
         dataManager.storeMedications(medicationData: medicationGroups)
     }
     
